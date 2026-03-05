@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
         $admin = User::create([
             'name' => 'Admin Pusat',
             'email' => 'admin@ham.go.id',
-            'password' => 'password',
+            'password' => bcrypt('password'),
         ]);
         $admin->assignRole($adminRole);
 
@@ -60,7 +60,7 @@ class DatabaseSeeder extends Seeder
                 $user = User::create([
                     'name' => "Staff {$office->code}",
                     'email' => strtolower($office->code) . '@ham.go.id',
-                    'password' => 'password',
+                    'password' => bcrypt('password'),
                     'office_id' => $office->id,
                 ]);
                 $user->assignRole($regionalRole);
