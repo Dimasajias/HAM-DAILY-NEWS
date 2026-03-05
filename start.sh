@@ -7,8 +7,8 @@ SERVER_PID=$!
 echo "=== Waiting for server to boot... ==="
 sleep 3
 
-echo "=== FRESH migration + seed (one-time reset) ==="
-php artisan migrate:fresh --seed --force || true
+echo "=== Running migrations ==="
+php artisan migrate --force || true
 
 echo "=== Storage link ==="
 php artisan storage:link || true
