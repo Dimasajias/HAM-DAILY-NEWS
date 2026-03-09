@@ -788,7 +788,7 @@
             text-decoration: none;
             color: inherit;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             box-shadow: 0 2px 8px rgba(10, 43, 107, 0.03);
             height: 100%;
@@ -820,7 +820,8 @@
 
         .card-thumb {
             position: relative;
-            width: 35%;
+            width: 100%;
+            aspect-ratio: 16 / 9;
             overflow: hidden;
             background: var(--gray-50);
             flex-shrink: 0;
@@ -835,9 +836,8 @@
 
         .card-thumb img {
             width: 100%;
-            height: auto;
-            max-height: 280px;
-            object-fit: contain;
+            height: 100%;
+            object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
@@ -1230,7 +1230,7 @@
             .stat + .stat { border-left: none; border-top: none; }
             .card-grid { grid-template-columns: 1fr; }
             .activity-card { flex-direction: column; }
-            .card-thumb { width: 100%; aspect-ratio: 16 / 9; }
+            .card-thumb { width: 100%; }
             .main-content { padding: 1.5rem 1rem; }
             .filter-section { padding: 0.75rem; margin-top: 0; }
             .filter-bar { overflow: hidden; padding: 0.85rem; border-width: 1.5px; }
